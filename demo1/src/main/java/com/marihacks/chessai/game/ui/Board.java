@@ -101,8 +101,8 @@ public class Board extends GridPane {
 
                                     // AI move
                                     this.position.whiteTurn = false;
-                                    Node node = Minimax.minimax(this.position, 4,false);
-                                    this.position = node;
+                                    this.position = Minimax.minimax(this.position, 2,false);
+
 
                                     adjustImage();
 

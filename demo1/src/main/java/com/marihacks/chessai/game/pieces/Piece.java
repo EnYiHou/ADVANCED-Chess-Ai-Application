@@ -39,7 +39,12 @@ public abstract class Piece {
         List<int[]> movesPossible = attackingSquares(node);
         List<Piece[][]> possibleBoards = new ArrayList<>();
         for (int[] move : movesPossible) {
-            Piece[][] newBoard = node.board.clone();
+            Piece[][] newBoard = new Piece[8][8];
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    newBoard[i][j] = node.board[i][j];
+                }
+            }
             newBoard[move[0]][move[1]] = newBoard[this.getPoint()[0]][this.getPoint()[1]];
             newBoard[this.getPoint()[0]][this.getPoint()[1]] = null;
             possibleBoards.add(newBoard);

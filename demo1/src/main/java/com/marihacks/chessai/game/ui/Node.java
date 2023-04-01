@@ -72,5 +72,10 @@ public class Node {
         return point[0] >= 0 && point[0] < 8 && point[1] >= 0 && point[1] < 8;
     }
 
+    //clone
+    public Object clone() {
+        return new Node(board.clone(), whiteTurn);
+    }
+
 
 }
